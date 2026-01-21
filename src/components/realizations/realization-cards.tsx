@@ -22,8 +22,8 @@ export const RealizationCards = () => {
 
   return (
     <CardsGrid ref={parent} className="w-full">
-      {realizations.sort(sortByCreationDate).map((realization) => (
-        <RealizationCard {...realization} key={realization.slug} />
+      {realizations.sort(sortByCreationDate).map((realization, idx) => (
+        <RealizationCard {...realization} key={realization.slug} idx={idx} />
       ))}
     </CardsGrid>
   );

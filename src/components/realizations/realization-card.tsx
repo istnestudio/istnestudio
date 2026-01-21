@@ -12,7 +12,10 @@ export const RealizationCard = ({
   slides,
   title,
   slug,
-}: RealizationCardFragment) => {
+  idx: cardsIdx,
+}: RealizationCardFragment & {
+  idx?: number;
+}) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   return (
@@ -20,6 +23,7 @@ export const RealizationCard = ({
       <div className="embla__container h-full w-full basis-full">
         {slides.map(({ responsiveImage, id, blurUpThumb }, idx) => (
           <Image
+            priority={cardsIdx === 0 && idx === 0}
             className="embla__slide"
             key={id + idx}
             blurDataURL={blurUpThumb || ""}
