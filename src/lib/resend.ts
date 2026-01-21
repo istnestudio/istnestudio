@@ -11,12 +11,16 @@ class ResendSendError extends Data.TaggedError("ResendSendError")<{
   error: ErrorResponse;
 }> {}
 
-const resend = new Resend(process.env.RESEND_TOKEN);
+const initializeResendEffect = Effect.gen(function* () {
+  if (!process.env.RESEND_TOKEN)
+    return yield* Effect.fail(new MissingApiKeyError());
+
+  return new Resend(process.env.RESEND_TOKEN);
+});
 
 export const resendSendEffect = (emailOptions: CreateEmailOptions) =>
   Effect.gen(function* () {
-    if (!process.env.RESEND_TOKEN)
-      return yield* Effect.fail(new MissingApiKeyError());
+    const resend = yield* initializeResendEffect;
 
     const result = yield* Effect.tryPromise({
       try: () => resend.emails.send(emailOptions),
@@ -28,8 +32,7 @@ export const resendSendEffect = (emailOptions: CreateEmailOptions) =>
 
 export const resendSendBatchEffect = (emailOptions: CreateBatchOptions) =>
   Effect.gen(function* () {
-    if (!process.env.RESEND_TOKEN)
-      return yield* Effect.fail(new MissingApiKeyError());
+    const resend = yield* initializeResendEffect;
 
     const result = yield* Effect.tryPromise({
       try: () => resend.batch.send(emailOptions),

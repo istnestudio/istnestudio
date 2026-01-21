@@ -31,17 +31,21 @@ export const RealizationsSlidesGrid = ({
       />
       <CardsGrid className={className}>
         {slides.map(({ responsiveImage, blurUpThumb, id }, idx) => (
-          <Image
-            className="cursor-pointer"
-            onClick={() => setIndex(idx)}
+          <button
             key={id + idx}
-            blurDataURL={blurUpThumb || ""}
-            alt={responsiveImage?.alt || ""}
-            src={responsiveImage?.src || ""}
-            sizes={responsiveImage?.sizes || ""}
-            width={responsiveImage?.width || 0}
-            height={responsiveImage?.height || 0}
-          />
+            onClick={() => setIndex(idx)}
+            className="cursor-pointer"
+            aria-label={`Otwórz ${responsiveImage?.alt || idx + 1} w lightboxie`}
+          >
+            <Image
+              blurDataURL={blurUpThumb || ""}
+              alt={responsiveImage?.alt || ""}
+              src={responsiveImage?.src || ""}
+              sizes={responsiveImage?.sizes || ""}
+              width={responsiveImage?.width || 0}
+              height={responsiveImage?.height || 0}
+            />{" "}
+          </button>
         ))}
       </CardsGrid>
     </>

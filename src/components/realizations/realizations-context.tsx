@@ -6,7 +6,6 @@ import {
   PropsWithChildren,
   SetStateAction,
   useContext,
-  useEffect,
   useState,
 } from "react";
 import { RealizationCardFragment } from "../../../graphql/generated";
@@ -37,14 +36,10 @@ export const RealizationsContextProvider = ({
   children,
 }: RealizationsContextProviderProps) => {
   const [category, setCategory] = useState<Category>("web");
-  const [filteredRealizations, setFilteredRealizations] =
-    useState<RealizationCardFragment[]>();
 
-  useEffect(() => {
-    setFilteredRealizations(
-      realizations.filter((realization) => realization.category === category),
-    );
-  }, [category]);
+  const filteredRealizations = realizations.filter(
+    (r) => r.category === category,
+  );
 
   return (
     <RealizationsContext.Provider

@@ -53,6 +53,7 @@ query Realization($slug: String) {
 
 query RealizationSlugs {
   allRealizations {
+    _updatedAt
     slug
   }
 }

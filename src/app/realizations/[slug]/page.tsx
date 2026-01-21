@@ -91,15 +91,19 @@ const RealizationPage = async ({
           </div>
         </Centered>
         <RealizationsSlidesGrid {...realization} className="mt-12" />
-        <Centered>
-          {realization.buttonLink && (
-            <a href={realization.buttonLink.href || "#"} className="mt-12">
+        {realization.buttonLink && (
+          <Centered>
+            <a
+              href={realization.buttonLink.href || "#"}
+              target="_blank"
+              className="mt-12"
+            >
               <Button className="w-full" color="black">
                 {realization.buttonLink.display}
               </Button>
             </a>
-          )}
-        </Centered>
+          </Centered>
+        )}
       </Container>
     </>
   );

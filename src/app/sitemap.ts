@@ -2,7 +2,7 @@ import { request } from "@/lib/cms";
 import type { MetadataRoute } from "next";
 import { RealizationSlugsDocument } from "../../graphql/generated";
 
-const baseUrl = process.env.VERCEL_URL
+const baseUrl = process.env.DOMAIN
   ? `https://${process.env.DOMAIN}`
   : "http://localhost:3000";
 
@@ -31,9 +31,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ] as const;
 
   const realizationPages: MetadataRoute.Sitemap = allRealizations.map(
-    ({ slug }) => ({
+    ({ slug, _updatedAt }) => ({
       url: `${baseUrl}/realizations/${slug}`,
-      lastModified: new Date(),
+      lastModified: new Date(_updatedAt),
       changeFrequency: "monthly",
       priority: 0.8,
     }),

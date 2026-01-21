@@ -11,7 +11,12 @@ export const RealizationChatBubble = ({
   message,
 }: RealizationChatBubbleProps) => {
   return (
-    <div
+    <section
+      aria-label={
+        isDev
+          ? "Wiadomość od Pana Programisty"
+          : "Wiadomość od Pana Projektanta"
+      }
       className={cn("flex gap-3", {
         "flex-row-reverse": isDev,
       })}
@@ -54,6 +59,6 @@ export const RealizationChatBubble = ({
           <P className="leading-4.5">{message}</P>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
