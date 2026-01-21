@@ -6,6 +6,7 @@
     "dev": "next dev",
     "generate-ts-types": "graphql-codegen --config .graphqlrc.js --verbose --require dotenv/config",
     "email-dev": "email dev --dir ./src/components/emails --port 3001",
+    "analyze": "bunx next experimental-analyze",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -61,6 +62,12 @@
   "ignoreScripts": [
     "sharp",
     "unrs-resolver"
+  ],
+  "browserslist": [
+    "last 2 chrome versions",
+    "last 2 firefox versions",
+    "last 2 safari versions",
+    "last 2 edge versions"
   ],
   "trustedDependencies": [
     "sharp",
