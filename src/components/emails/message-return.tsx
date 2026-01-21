@@ -13,7 +13,9 @@ const MessageReturnEmail = ({
 }: ContactFormData) => {
   return (
     <Html lang="pl">
-      <Container style={{ margin: "64px", fontFamily: "sans-serif" }}>
+      <Container
+        style={{ margin: "0", padding: "64px", fontFamily: "sans-serif" }}
+      >
         <Img src={`${baseUrl}/istnelogo.png`} />
         <Text style={{ marginBottom: "0" }}>
           Imię: <b>{name}</b>

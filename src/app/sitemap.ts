@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ] as const;
 
   const realizationPages: MetadataRoute.Sitemap = allRealizations.map(
-    (slug) => ({
+    ({ slug }) => ({
       url: `${baseUrl}/realizations/${slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
