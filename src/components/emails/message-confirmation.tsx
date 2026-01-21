@@ -1,7 +1,7 @@
 import { Html, Container, Img, Text } from "@react-email/components";
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
+const baseUrl = process.env.DOMAIN
+  ? `https://${process.env.DOMAIN}`
   : "http://localhost:3000";
 
 const MessageConfirmationEmail = () => {

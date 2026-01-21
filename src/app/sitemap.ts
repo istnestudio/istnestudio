@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 import { RealizationSlugsDocument } from "../../graphql/generated";
 
 const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
+  ? `https://${process.env.DOMAIN}`
   : "http://localhost:3000";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
