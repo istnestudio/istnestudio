@@ -23,6 +23,7 @@ export const RealizationCard = ({
       <div className="embla__container h-full w-full basis-full">
         {slides.map(({ responsiveImage, id, blurUpThumb }, idx) => (
           <Image
+            fetchPriority={cardsIdx === 0 && idx === 0 ? "high" : "auto"}
             priority={cardsIdx === 0 && idx === 0}
             className="embla__slide"
             key={id + idx}
