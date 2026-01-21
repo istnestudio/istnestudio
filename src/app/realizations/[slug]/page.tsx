@@ -67,9 +67,9 @@ const RealizationPage = async ({
             <H1>{realization.title}</H1>
             <div className="flex h-6 w-full items-center justify-between rounded-lg border border-foreground">
               <P className="-mt-0.5 flex-1">{realization.realizationYear}</P>
-              <P className="-mt-0.5 flex-1 border-r border-l border-foreground">
-                {realization.realizationTime}
-              </P>
+              <div className="flex-1 border-r border-l border-foreground">
+                <P className="-mt-0.5">{realization.realizationTime}</P>
+              </div>
               <P className="-mt-0.5 flex-1">{realization.category}</P>
             </div>
             <P>{realization.description}</P>

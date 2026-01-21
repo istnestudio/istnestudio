@@ -49,7 +49,7 @@ export const TextArea = <T extends FieldValues>({
         <label
           htmlFor={props.id ?? id}
           className={cn(
-            "pointer-events-none absolute top-0.5 left-0.5 w-[99%] rounded-2xl bg-gray py-2 pl-4 text-left text-[0.57rem] text-foreground/55 uppercase",
+            "pointer-events-none absolute top-0.5 left-0.5 w-[calc(100%-4px)] rounded-2xl bg-gray py-2 pl-4 text-left text-[0.57rem] text-foreground/55 uppercase",
             {
               "text-error!": error,
             },

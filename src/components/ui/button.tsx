@@ -9,10 +9,10 @@ const buttonVariants = cva(
     variants: {
       color: {
         black:
-          "border-foreground bg-foreground text-background enabled:hover:bg-gray-light enabled:hover:text-foreground",
+          "border-foreground bg-foreground text-background hover:bg-gray-light hover:text-foreground",
         white:
           "border-foreground bg-background text-foreground enabled:hover:bg-foreground enabled:hover:text-background",
-        gray: "border-gray bg-gray text-foreground hover:border-foreground enabled:hover:bg-foreground enabled:hover:text-background",
+        gray: "border-gray bg-gray text-foreground enabled:hover:border-foreground enabled:hover:bg-foreground enabled:hover:text-background",
         success: "border-success bg-success text-foreground",
         error: "border-error bg-error text-foreground",
         pending: "border-button-pending bg-button-pending text-background",

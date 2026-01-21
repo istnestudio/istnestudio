@@ -54,7 +54,7 @@ export const ContactForm = ({ className }: { className?: string }) => {
       )}
     >
       <h2 className="text-[0.65rem] uppercase">Formularz kontaktowy</h2>
-      <Input label="imie" name="name" register={register} error={errors.name} />
+      <Input label="imię" name="name" register={register} error={errors.name} />
       <Input
         label="mail"
         type="email"
