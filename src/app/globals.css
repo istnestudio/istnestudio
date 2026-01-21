@@ -2,25 +2,51 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+  --foreground-light: #292929;
+  --foreground-lighter: #4d4d4d;
+  --gray: #e1e1e1;
+  --gray-light: #efefef;
+  --gray-dark: #a6a6a6;
+  --gray-darker: #777777;
+  --success: #7bff00;
+  --error: #ff0000;
+  --bubble-designer: #f7f7f7;
+  --bubble-dev: var(--foreground);
+  --button-pending: #4d4d4d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-foreground-light: var(--foreground-light);
+  --color-foreground-lighter: var(--foreground-light);
+  --color-gray: var(--gray);
+  --color-gray-light: var(--gray-light);
+  --color-gray-dark: var(--gray-dark);
+  --color-gray-darker: var(--gray-darker);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-bubble-designer: var(--bubble-designer);
+  --color-bubble-dev: var(--bubble-dev);
+  --color-button-pending: var(--button-pending);
+  --font-pixel-demon: var(--pixel);
+  --font-schrifted: var(--schrifted);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-pixel-demon);
+}
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }

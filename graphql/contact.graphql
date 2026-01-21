@@ -1,0 +1,17 @@
+query Contact {
+  contact {
+    title
+    description
+    details
+    seo {
+      keywords
+      data {
+        title
+        description
+        image {
+          url
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+fragment RealizationCard on RealizationRecord {
+  _createdAt
+  slug
+  title
+  category
+  slides {
+    id
+    blurUpThumb
+    responsiveImage(
+      imgixParams: { ar: "4:5", fit: crop, auto: [format, compress] }
+    ) {
+      width
+      height
+      alt
+      src
+      sizes
+      srcSet
+    }
+  }
+}
+
+query RealizationCards {
+  allRealizations {
+    ...RealizationCard
+  }
+}
+
+query Realization($slug: String) {
+  realization(filter: { slug: { eq: $slug } }) {
+    ...RealizationCard
+    lightbox: slides {
+      id
+      blurUpThumb
+      width
+      height
+      url
+      alt
+    }
+    keywords
+    chatBubbles {
+      message
+      isDev
+    }
+    description
+    realizationTime
+    realizationYear
+    buttonLink {
+      display
+      href
+    }
+  }
+}
+
+query RealizationSlugs {
+  allRealizations {
+    slug
+  }
+}

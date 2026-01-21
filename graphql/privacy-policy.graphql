@@ -1,0 +1,17 @@
+query PrivacyPolicy {
+  privacyPolicy {
+    content {
+      value
+    }
+    seo {
+      keywords
+      data {
+        title
+        description
+        image {
+          url
+        }
+      }
+    }
+  }
+}
